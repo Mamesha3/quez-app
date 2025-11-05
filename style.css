@@ -1,0 +1,152 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: linear-gradient(
+        white 50%,
+        orange 50%
+    );
+    overflow: hidden;
+}
+.container {
+   border: 1px solid black;
+   max-width: 33em;
+   position: relative;
+   top: 50%;
+   transform: translateY(-50%);
+   margin: auto;
+   background-color: black;
+   color: white;
+   box-shadow: 0 0 13px rgba(255, 255, 255, 0.493);
+   border-radius: 0.6em;
+}
+#quez {
+    text-align: center;
+    text-transform: capitalize;
+    margin-bottom: 1.88em;
+    font-size: 1.6em;
+}
+#answers li {
+   margin-bottom: 0.5em;
+   list-style: none;
+   cursor: pointer;
+   font-size: 1.1em;
+   width: 100%;
+   margin-left: -1.4em;
+   padding: 0.4em 0;
+   padding-left: 0.86em;
+   box-shadow: 0 0 12px rgba(255, 255, 255, 0.372);
+   text-transform: capitalize;
+   border-radius: 0.32em;
+}
+#next-btn {
+   position: relative;
+   width: 100%;
+   border-radius: 0.23em;
+   font-size: 1.2em;
+   text-transform: capitalize;
+   font-weight: 650;
+   color: black;
+   background-color: orange;
+   transition: background-color 0.5s ease-in-out;
+   transition: color 0.5s ease-in-out;
+   cursor: pointer;
+   box-shadow: 0 0 15px rgba(255, 255, 255, 0.505);
+   padding: 0.3em 0;
+}
+#next-btn:hover {
+   color: white;
+   background-color: orangered;
+}
+.container {
+   display: none;
+}
+/* for subscribe news container */
+.subscrib-container {
+   position: absolute;
+   width: 410px;
+   margin: auto;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   text-align: center;
+   top: 50%;
+   padding-block: 1em;
+}
+#inp-field {
+   width: 400px;
+   padding: 10px 0 10px 8px;
+   background-color: lightgoldenrodyellow;
+   font-size: 1.3em;
+   border: none;
+   outline: none;
+   border-radius: 1em;
+   font-weight: 600;
+   box-shadow: 0 0 17px rgba(0, 0, 0, 0.308);
+}
+#inp-field::placeholder {
+   color: green;
+   font-weight: 600;
+}
+#inp-field:focus {
+   outline: 2px solid lightgreen;
+}
+#submit-btn {
+   position: absolute;
+   top: 22px;
+   right: 10px;
+   font-size: 1.2em;
+   text-transform: capitalize;
+   font-weight: 580;
+   color: green;
+   background-color: black;
+   border-radius: 0.8em;
+   border: none;
+   outline: none;
+   padding: 5px 10px;
+   cursor: pointer;
+   user-select: none;
+   transition: background-color 0.5s ease-in-out;
+   transition: color 0.5s ease-in-out;
+}
+#submit-btn:hover {
+   color: black;
+   background-color: green;
+}
+#error {
+   font-size: 1em;
+   margin-top: 0;
+   text-align: left;
+   margin-left: 30px;
+   color:red;
+   font-weight: 800;
+}
+.animate {
+   animation: animated 0.9s ease-in-out alternate;
+}
+@keyframes animated {
+   0%{transform: translateY(-50%) scale(0.9);opacity: 0.3;}
+   50%{transform: translateY(-50%) scale(1.05);opacity: 0.6;}
+   100%{transform: translateY(-50%) scale(1);opacity: 1;}
+}
+@media screen and (min-width: 40em) {
+   .container {
+      max-width: 37em;
+   }
+   #quez {
+      font-size: 2em;
+   }
+   #answers li {
+      font-size: 1.5em;
+   }
+}
+@media screen and (max-width: 450px) {
+   .container {
+      max-width: 340px;
+   }
+   .subscrib-container {
+      width: 280px;
+   }
+   #submit-btn {
+      right: -120px;
+   }
+}
