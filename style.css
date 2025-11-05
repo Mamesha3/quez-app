@@ -72,8 +72,13 @@ body {
    top: 50%;
    padding-block: 1em;
 }
-#inp-field {
+.input-field {
+   display: flex;
    width: 400px;
+   margin-top: 50px;
+}
+#inp-field {
+   width: 100%;
    padding: 10px 0 10px 8px;
    background-color: lightgoldenrodyellow;
    font-size: 1.3em;
@@ -81,6 +86,20 @@ body {
    outline: none;
    border-radius: 1em;
    font-weight: 600;
+   box-shadow: 0 0 17px rgba(0, 0, 0, 0.308);
+}
+.sub {
+   color: orangered;
+   font-size: 1.5rem;
+   margin-top: 3px;
+}
+#answer {
+   background-color: black;
+   color: white;
+   text-transform: capitalize;
+   font-size: 1.5rem;
+   padding: .7rem 0;
+   border-radius: .4rem;
    box-shadow: 0 0 17px rgba(0, 0, 0, 0.308);
 }
 #inp-field::placeholder {
@@ -92,8 +111,9 @@ body {
 }
 #submit-btn {
    position: absolute;
-   top: 22px;
-   right: 10px;
+   z-index: 10;
+   margin-left: -95px;
+   margin-top: 5px;
    font-size: 1.2em;
    text-transform: capitalize;
    font-weight: 580;
@@ -119,6 +139,25 @@ body {
    margin-left: 30px;
    color:red;
    font-weight: 800;
+}
+#play-again {
+   font-size: 1rem;
+   border-radius: .5rem;
+   outline: none;
+   padding: .5rem 2rem;
+   margin-bottom: 10px;
+   font-weight: 650;
+   background-color: black;
+   color: orange;
+   cursor: pointer;
+   transition: background-color .4s ease-in-out, color .4s ease-in-out, transform .4s ease-in-out;
+}
+#play-again:hover {
+   background-color: orange;
+   color: black;
+}
+#play-again:active {
+   transform: scale(1.06);
 }
 .animate {
    animation: animated 0.9s ease-in-out alternate;
@@ -148,5 +187,10 @@ body {
    }
    #submit-btn {
       right: -120px;
+   }
+   #answer {
+      width: 300px;
+      margin-left: 40px;
+      padding-inline: 1rem;
    }
 }

@@ -1,4 +1,8 @@
 const quezContainer = document.querySelector('#quez')
+const newsContainer = document.querySelector('.subscrib-container')
+const allQuezContainer = document.querySelector('.container')
+const playAgain = document.querySelector('#play-again')
+const finalAnswer = document.querySelector('#answer')
 const a = document.querySelector('#a')
 const b = document.querySelector('#b')
 const c = document.querySelector('#c')
@@ -41,63 +45,55 @@ const quezs = [
         {text: 'one time life', answer: false}
       ]
    }
+  
 ]
 let current = 0
+let correctAnswer = 0
+let wrongAnswer = 0
 
 function getQuez() {
-    current++
+   current++
+    const lis = document.querySelectorAll('li')
     let q = (current + 1) % quezs.length
     let allQuez = quezs[q]
-    const lis = document.querySelectorAll('li')
-
-    quezContainer.textContent = allQuez.quez
+   quezContainer.textContent = allQuez.quez
+   //  quezContainer.textContent = quezs[0].quez
 
     allQuez.options.forEach((q, index)=> {
-       let done = quezs.length
        let li = lis[index]
        li.textContent = q.text
        li.style.backgroundColor = ''
 
-       li.onclick = () => {
+       let liClick = li.onclick = () => {
          if (q.answer === true) {
             li.style.backgroundColor = 'green'
             li.style.color = 'white' 
+            correctAnswer++
          }else {   
             li.style.backgroundColor = 'red'
-            li.style.color = black        
+            wrongAnswer++   
          }
+         
+      }
+
+      if (current > quezs.length) {
+        finalAnswer.textContent = `You get: ${correctAnswer}, You lose: ${wrongAnswer}, out of ${quezs.length} questions`
+        newsContainer.style.display = 'block'
+        allQuezContainer.style.display = 'none'
+     }else {
+         newsContainer.style.display = 'none'
+         allQuezContainer.style.display = 'block'
       }
     })
    
 }
-document.querySelector('#next-btn').addEventListener('click', ()=> {
-    getQuez()
+document.querySelector('#next-btn').addEventListener('click', ()=> {  
+   getQuez()
+})
+playAgain.addEventListener('click', () => {
+   allQuezContainer.style.display = 'block'
+   newsContainer.style.display = 'none'
 })
 
-// for subscription field
-const submitBtn = document.querySelector('#submit-btn')
-const errorText = document.querySelector('#error')
-const input = document.querySelector('#inp-field')
-const newsContainer = document.querySelector('.subscrib-container')
-const allQuezContainer = document.querySelector('.container')
 
-function validation() {
-   if (input.value.match(/[.@]/) && input.value.match(/[a-aA-Z]/)) {
-      newsContainer.style.display = 'none'
-      allQuezContainer.style.display = 'block'
-      allQuezContainer.classList.add('animate')
-   }else {
-      newsContainer.style.display = 'block'
-      allQuezContainer.style.display = 'none'
-      errorText.style.display = 'block'
-      errorText.textContent = 'ERROR'
-      setTimeout(() => {
-         errorText.style.display = 'none'
-      }, 2000);
-   }
-}
-submitBtn.onclick = () => {
-   validation()
-}
-
-getQuez()
+// getQuez()

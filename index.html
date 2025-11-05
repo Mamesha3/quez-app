@@ -18,15 +18,19 @@
 
         <button id="next-btn">next</button>
     </div>
-    <form class="subscrib-container">
-        <div class="input-field">
+    <div class="subscrib-container">
+        <h1 id="answer">
+            you get: 2, you lose: 1, out of 5 question
+        </h1>
+        <button id="play-again">Play Again</button>
+        <form class="input-field" action="https://formspree.io/f/xzzklkez" method="POST">
             <input type="email" name="email"  id="inp-field" placeholder="Enter your email">
-        </div>
-        <div class="button-field">
-            <button id="submit-btn" type="submit">submit</button>
-        </div>
-        <p id="error"></p>
-    </form>
+            <div class="button-field">
+                <button id="submit-btn" type="submit">submit</button>
+            </div>
+        </form>
+        <p class="sub">SUBSCRIBE</p>
+    </div>
 
     <script src="script.js"></script>
 </body>
