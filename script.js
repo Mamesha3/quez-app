@@ -91,8 +91,7 @@ document.querySelector('#next-btn').addEventListener('click', ()=> {
    getQuez()
 })
 playAgain.addEventListener('click', () => {
-   allQuezContainer.style.display = 'block'
-   newsContainer.style.display = 'none'
+   location.reload()
 })
 
 
