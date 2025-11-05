@@ -96,4 +96,4 @@ playAgain.addEventListener('click', () => {
 })
 
 
-// getQuez()
+getQuez()
