@@ -51,6 +51,13 @@ let current = 0
 let correctAnswer = 0
 let wrongAnswer = 0
 
+
+  // to get code click here
+document.querySelector('.code_sign').addEventListener('click',function () {
+      let code = document.querySelector('.code_here')
+      code.classList.toggle('showhere')
+})
+
 function getQuez() {
    current++
     const lis = document.querySelectorAll('li')
